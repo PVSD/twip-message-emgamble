@@ -21,15 +21,14 @@ public class Main {
                System.out.println("Enter the number of the person you are sending it to.");
                String receiver = phoneNum2.next();
                Message a = new Message(number, textMessage, receiver);
-               MessageList b = new MessageList(a);
-               b.newConversation(a);
+               MessageList.newConversation(a);
                System.out.println("Press 1 to see this conversation. Press 2 to see all conversations");
                int next = printOutOption.nextInt();
                if (next == 1){
-                   System.out.println(b.displayConversation(receiver));
+                   System.out.println(MessageList.displayConversation(receiver));
                }
                if (next == 2){
-                   System.out.println(b.displayAllConversations());
+                   System.out.println(MessageList.displayAllConversations());
                }
 
 
@@ -42,15 +41,15 @@ public class Main {
                System.out.println("Enter the number of the person you are sending it to.");
                String receiver = phoneNum2.next();
                Message a = new Message(number, textMessage, receiver);
-               MessageList b = new MessageList(a);
-               b.addToConversation(receiver, a);
+
+               MessageList.addToConversation(receiver, a);
                System.out.println("Press 1 to see this conversation. Press 2 to see all conversations");
                int next = printOutOption.nextInt();
                if (next == 1){
-                   System.out.println(b.displayConversation(receiver));
+                   System.out.println(MessageList.displayConversation(receiver));
                }
                if (next == 2){
-                   System.out.println(b.displayAllConversations());
+                   System.out.println(MessageList.displayAllConversations());
                }
 
            }

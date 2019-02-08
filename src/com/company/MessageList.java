@@ -4,14 +4,10 @@ package com.company;
 import java.util.ArrayList;
 
 public class MessageList {
-    public ArrayList conversations;
-    public ArrayList messages;
-    public MessageList(Message a){
-        Message mostRecentText = a;
-        messages.add(0, mostRecentText);
+    public static ArrayList conversations;
+    //public ArrayList messages;
 
-    }
-    public void addToConversation(String toNum, Message x){
+    public static void addToConversation(String toNum, Message x){
         if (conversations.contains(toNum)){
             ArrayList w = (ArrayList) conversations.get(conversations.indexOf(toNum));
             w.add(x);
@@ -19,14 +15,14 @@ public class MessageList {
         }
 
     }
-    public void newConversation(Message x){
+    public static void newConversation(Message x){
         ArrayList ary = new ArrayList();
-        ary.add(x);
-        conversations.add(0, ary);
+        ary.add(0,x);
+        conversations.add(0,ary);
 
     }
 
-    public String displayConversation(String toNum){
+    public static String displayConversation(String toNum){
         StringBuffer sb = new StringBuffer();
         ArrayList y = (ArrayList) conversations.get(conversations.indexOf(toNum));
         for(int i = 0; i < y.size(); i++) {
@@ -50,7 +46,7 @@ public class MessageList {
 
     }
 
-    public String displayAllConversations(){
+    public static String displayAllConversations(){
         StringBuffer sb = new StringBuffer();
         for(int w = 0; w < conversations.size(); w ++) {
             ArrayList y = (ArrayList) conversations.get(w);
